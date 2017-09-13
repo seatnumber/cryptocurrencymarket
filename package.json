@@ -1,0 +1,19 @@
+{
+  "name": "werank",
+  "version": "1.0.0",
+  "description": "boss need",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "grep",
+    "weranking"
+  ],
+  "author": "seatnumber",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^2.2.31",
+    "request": "^2.79.0"
+  }
+}
