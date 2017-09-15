@@ -10,11 +10,11 @@ var options = {
     headers: {'cache-control': 'no-cache'}
 }
 
-var downloaddata = function (id) {
+var downloaddata = function (coinid) {
     return new Promise(function (resolve, reject) {
         co(function *() {
             yield connectMongodb('mongodb://localhost:27017/cryptocurrencymarket')
-            var url = home + '/'+id+'/#markets'
+            var url = home + '/'+coinid+'/#markets'
             var options = {
                 method: 'GET',
                 url: url,
@@ -37,6 +37,7 @@ var downloaddata = function (id) {
                     volumepercent = +volumepercent.slice(0,volumepercent.length-1)
                     var update = tds.eq(6).text()
                     mongodb.collection('coinmarketcap').insertOne({
+                        coinid:coinid,
                         number:i,
                         source:source,
                         pair:pair,
